@@ -156,6 +156,7 @@ type WorkspaceStatusSection = DaemonStatusSection<unknown>;
 
 interface FullDaemonStatus {
   sessions: BridgeDaemonStatusSnapshot['sessions'];
+  acpMounts: AcpHttpSnapshot['mounts'];
   acpConnections: AcpHttpSnapshot['connections'];
   workspace: Record<string, WorkspaceStatusSection>;
   auth: {
@@ -1043,6 +1044,7 @@ async function buildFullStatus(
 
   return {
     sessions,
+    acpMounts: acpSnapshot?.mounts ?? [],
     acpConnections: acpSnapshot?.connections ?? [],
     workspace: {
       mcp,

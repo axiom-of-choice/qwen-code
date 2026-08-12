@@ -1726,6 +1726,7 @@ function createBootstrapServeApp(input: {
         ? {
             full: {
               sessions: [],
+              acpMounts: [],
               acpConnections: [],
               workspace: {},
               auth: {
